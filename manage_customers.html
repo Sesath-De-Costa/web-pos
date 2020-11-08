@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        .input-label {
+            padding-top: 6px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -40,7 +53,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
@@ -97,7 +111,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Customer Management</h1>
+                        <h1 class="m-0 text-dark" wrap="20">Customer Management</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -112,29 +126,74 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid" style="display: flex;flex-direction: column">
-                <form style="display: flex">
-                    <div class="form-group" style="display: flex;flex-direction: row;justify-content: space-between">
-                        <label for="username" style="padding-top: 6px">Username </label>
-                        <input type="email" class="form-control" id="username" aria-describedby="emailHelp"
-                               placeholder="Enter email" style="width: 80%;">
+            <div class="container-fluid" style="display: flex;flex-direction: column;">
+                <form style="display: flex;flex-wrap: wrap;">
+                    <div style="width: 42%;height: 50%">
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="id">ID </label>
+                                <input type="text" class="form-control" id="id" aria-describedby="Enter ID"
+                                       placeholder="Enter ID" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="mobile">Mobile</label>
+                                <input type="text" class="form-control" id="mobile" aria-describedby="Enter contact number"
+                                       placeholder="Enter contact number" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="email">E-mail </label>
+                                <input type="email" class="form-control" id="email" aria-describedby="Enter email"
+                                       placeholder="Enter email address" style="width: 80%;">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group" style="display: flex;flex-direction: row;justify-content: space-between">
-                        <label for="password" style="padding-top: 6px">Password </label>
-                        <input type="password" class="form-control" id="password" placeholder="Password"style="width: 80%">
-                    </div>
-                    <div>
+                    <div style="width: 42%;height: 50%">
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="name">Full Name </label>
+                                <input type="text" class="form-control" id="name" aria-describedby="Enter full name"
+                                       placeholder="Enter email" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="address">Address </label>
+                                <input type="text" class="form-control" id="address" aria-describedby="Enter Address"
+                                       placeholder="Enter address" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="custom-file" style="width: 80%;float: right" >
+                                <input type="file" class="custom-file-input" id="customFile">
+                                <label class="custom-file-label" for="customFile">Upload a photo</label>
+                            </div>
+                        </div>
 
                     </div>
+                    <div style="width: 16%;height: 50%; display: flex;justify-content: center">
+                        <img src="assert/avatar-icon-png-3-Transparent-Images.png" alt="Profile picture" width=65%
+                             height=65%>
+                    </div>
                 </form>
-                <div>
-                    <table class="table">
+                <div style="display: flex;">
+                    <table class="table" id="customer_table">
                         <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -143,18 +202,36 @@
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
+                            <td>Mark</td>
+                            <td>
+                                <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
+                                    Delete
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
+                            <td>Thornton</td>
                             <td>@fat</td>
+                            <td>
+                                <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
+                                    Delete
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Larry</td>
                             <td>the Bird</td>
                             <td>@twitter</td>
+                            <td>@fat</td>
+                            <td>
+                                <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
+                                    Delete
+                                </button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
