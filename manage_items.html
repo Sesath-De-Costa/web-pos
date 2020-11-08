@@ -1,10 +1,263 @@
 <!DOCTYPE html>
 <html>
 <head>
-<titile>Manage Items</titile>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WEB-POS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="node_modules/admin-lte/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        .input-label {
+            padding-top: 6px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+        .row-data>td{
+            padding: 5px;
+        }
+        .row-data>th{
+            padding: 5px;
+
+        }
+    </style>
 </head>
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="display: flex;height: 58px">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav" style="width: 5%">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
 
+            </li>
+        </ul>
+        <div class="content-header" style="flex-wrap: wrap;width: 95%;">
+            <div class="container-fluid">
+                <div style="display:flex;width: 100%;flex-direction: row;justify-content: space-between">
+                    <div style="display:flex;">
+                        <h1 class="m-0 text-dark" wrap="20">Item Management</h1>
+                    </div><!-- /.col -->
+                    <div style="display: flex;">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active"><a href="dashbord.html">Dashboard</a></li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="/" class="brand-link text-center">
+            <span class="brand-text">WEB POS</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="dashbord.html" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manage_customers.html" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Manage Customers
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manage_items.html" class="nav-link active">
+                            <i class="nav-icon fas fa-list-ol"></i>
+                            <p>
+                                Manage Items
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="place_order.html" class="nav-link">
+                            <i class="nav-icon fas fa-cart-plus"></i>
+                            <p>
+                                Place Orders
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manage_orders.html" class="nav-link">
+                            <i class="nav-icon fas fa-search"></i>
+                            <p>
+                                Search Orders
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid" style="display: flex;flex-direction: column; padding-top: 30px">
+                <form style="display: flex;flex-wrap: wrap;">
+                    <div style="width: 42%;height: 50%;">
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="code">Code </label>
+                                <input type="text" class="form-control" id="code" aria-describedby="Item_code"
+                                       placeholder="Enter code" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="mobile">Unit Price</label>
+                                <input type="text" class="form-control" id="mobile" aria-describedby="Unit Price"
+                                       placeholder="Enter unit price" style="width: 80%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 42%;height: 50%;">
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="name">Description</label>
+                                <input type="text" class="form-control" id="name" aria-describedby="Enter full name"
+                                       placeholder="Enter description" style="width: 80%;">
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="form-group"
+                                 style="display: flex;flex-direction: row;justify-content: space-between">
+                                <label class="input-label" for="address">Address </label>
+                                <input type="text" class="form-control" id="address" aria-describedby="Enter Address"
+                                       placeholder="Enter address" style="width: 80%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex;width: 100%;">
+                        <div class="container-fluid" style="display: flex;padding: 0">
+                            <div class="form-group" style="display: flex;width: 100%;justify-content: flex-end">
+                                <div style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-primary">Save</button></div>
+                                <div style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-primary">Delete</button></div>
+                                <div style="padding-left: 10px;"><button type="reset" class="btn btn-primary">Clear</button></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div style="display: flex;">
+                    <table class="table" id="customer_table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="row-data">
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>
+                                <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="row-data">
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>Thornton</td>
+                            <td>
+                                <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="row-data">
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>
+                                <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2020 <a href="http://ijse.lk">ijse.lk</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0.0
+        </div>
+    </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="node_modules/admin-lte/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="node_modules/admin-lte/dist/js/adminlte.js"></script>
 </body>
 </html>
