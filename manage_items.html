@@ -32,6 +32,9 @@
             padding: 5px;
 
         }
+        .price{
+            text-align: right;
+        }
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -173,7 +176,7 @@
                         <div class="container-fluid" style="display: flex;padding: 0">
                             <div class="form-group" style="display: flex;width: 100%;justify-content: flex-end">
                                 <div style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-primary">Save</button></div>
-                                <div style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-primary">Delete</button></div>
+                                <div style="padding-left: 10px;padding-right: 10px"><button type="button" class="btn btn-primary" style="background-color: #ff90ad;color: black">Delete</button></div>
                                 <div style="padding-left: 10px;"><button type="reset" class="btn btn-primary">Clear</button></div>
 
                             </div>
@@ -186,7 +189,7 @@
                         <tr>
                             <th scope="col">Code</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Unit Price</th>
+                            <th class="price" scope="col">Unit Price</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -195,7 +198,7 @@
                         <tr class="row-data">
                             <th scope="row">1</th>
                             <td>Mark</td>
-                            <td>Otto</td>
+                            <td class="price">375.00</td>
                             <td>@mdo</td>
                             <td>
                                 <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
@@ -206,7 +209,7 @@
                         <tr class="row-data">
                             <th scope="row">2</th>
                             <td>Jacob</td>
-                            <td>Thornton</td>
+                            <td class="price">325.00</td>
                             <td>Thornton</td>
                             <td>
                                 <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
@@ -217,7 +220,7 @@
                         <tr class="row-data">
                             <th scope="row">3</th>
                             <td>Larry</td>
-                            <td>the Bird</td>
+                            <td class="price">435.00</td>
                             <td>@twitter</td>
                             <td>
                                 <button type="delete" class="btn btn-primary" style="width: 80%;justify-content:center">
